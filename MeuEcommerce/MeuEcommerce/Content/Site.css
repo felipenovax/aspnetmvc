@@ -22,3 +22,34 @@ select,
 textarea {
     max-width: 280px;
 }
+.produto-item:hover {
+    margin: 2px;
+    border-color: rgb(173, 171, 171);
+
+}
+
+body {
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+.body-conteudo {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.list-item {
+    border: 1px solid rgb(98,98,250);
+    margin: 5px 5px 0px 0px;
+    padding: 15px 10px;
+    min-widht: 250px;
+}
+
+.produto-item {
+    margin: 2px;
+}
+
+    .produto-item:hover {
+        margin: 2px;
+        border-color: rgb(173, 171, 171);
+    }

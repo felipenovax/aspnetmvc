@@ -1,35 +1,67 @@
-﻿@{
+﻿@model MeuEcommerce.Models.HomeIndexViewModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Felipe Erick</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.</p>
-            <button onclick="input_texto()" type="button" class="btn btn-success">Clique se entendeu</button>
-            <script> function input_texto() {
-     alert = ("Parabéns!");
-                }</script>
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+</style>
+
+   </head>
+<body>
+
+    <p>
+
+        <form action="" method="get" id="frmCategoria" class="option">
+            <span>CATEGORIAS</span>
+    </p>
+    
+    <select style="padding-left: 0px; width: 100px;" id="categoria" name="categoria" class="form-control" onchange="$('#frmCategoria').submit()">
+        <option value="">Tudo</option>
+        @foreach (var item in Model.Categorias)
+        {
+            if (item.Id == Model.CategoriaSelecionada)
+            {
+                <option selected value="@item.Id">@item.Nome</option>
+            }
+            else
+            {
+                 <option value="@item.Id">@item.Nome</option>
+            }
+            
+        }
+    </select>
+    </form>
+
+
+       
+
+    @*<button type="button" class="btn btn-info">Ir</button>*@
+    </p>
+    <div>
+        <div class="container">
+
+            <div class="row">
+
+                @foreach (var item in Model.Produtos)
+                {
+                    <div class="card produto-item " style="width: 18rem;">
+                        <img style="padding-top: 6px;" class="card-img-top" src="@item.Imagem" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Nome</h5>
+                            <p class="card-text">Smart TV Samsung 4k Ultra HD</p>
+                            <button onclick="carrinho()" type="button" class="btn btn-primary btn-sm">Adicionar</button>
+                            <span style="font: bold;padding-left: 10%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: 110%">R$ @item.Preco.ToString("N2")</span>
+                        </div>
+                    </div>
+                }
+
+
+
+
+
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+

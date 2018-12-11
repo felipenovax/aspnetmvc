@@ -1,33 +1,57 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Olá Mundo!</title>
+   
+    <link type="text/css" rel="stylesheet" href="/Content/bootstrap.css" />
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+   
+
+    <style>
+        body {
+        padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navegar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home/Index">Home <span class="sr-only">(página atual)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home/Contact">Favoritos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home/About">Sobre</a>
+
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                @*<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">*@
+                <button type="button" id="carrinho" class="btn btn-primary">
+                    Carrinho <span class="badge badge-dark">0</span>
                 </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                </ul>
-            </div>
+                @*<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Carrinho</button>*@
+            </form>
         </div>
-    </div>
+    </nav>
+
+    </p>
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />
