@@ -7,7 +7,7 @@ namespace MeuEcommerce.Models
 {
     public class CarrinhoCompras
     {
-        private Dictionary<int, CarrinhoItem> Itens;
+        public Dictionary<int, CarrinhoItem> Itens;
 
         public CarrinhoCompras()
         {
@@ -25,8 +25,8 @@ namespace MeuEcommerce.Models
                 var CarrinhoItem = new CarrinhoItem(produto.Id, produto.Nome, produto.Preco);
                 Itens.Add(produto.Id, CarrinhoItem);
             }
-        }
-
+        } 
+        public int QuantidadeDeItens => Itens.Values.Sum(item => item.Qtd);
     }
 
 

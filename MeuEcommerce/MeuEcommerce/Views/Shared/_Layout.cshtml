@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/home/Index">Home <span class="sr-only">(página atual)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(página atual)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/home/Contact">Favoritos</a>
@@ -41,9 +41,8 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 @*<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">*@
-                <button type="button" id="carrinho" class="btn btn-primary">
-                    Carrinho <span class="badge badge-dark">0</span>
-                </button>
+                
+                    <a href="/checkout" class="btn btn-primary" id="carrinho" > Carrinho: @string.Format("{0}", ViewBag?.Carrinho?.QuantidadeDeItens ?? 0) </a> 
                 @*<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Carrinho</button>*@
             </form>
         </div>

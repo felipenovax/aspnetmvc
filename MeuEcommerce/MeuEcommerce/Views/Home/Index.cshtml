@@ -51,7 +51,8 @@
                         <div class="card-body">
                             <h5 class="card-title">@item.Nome</h5>
                             <p class="card-text">Smart TV Samsung 4k Ultra HD</p>
-                            <button onclick="carrinho()" type="button" class="btn btn-primary btn-sm">Adicionar</button>
+                            <a href="/home/additem/@item.Id" class="btn btn-primary btn-sm"> Adicionar</a>
+                            @*<button type="button" class="btn btn-primary btn-sm" href="/home/additem/@item.Id" >Adicionar</button>*@
                             <span style="font: bold;padding-left: 10%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: 110%">R$ @item.Preco.ToString("N2")</span>
                         </div>
                     </div>
