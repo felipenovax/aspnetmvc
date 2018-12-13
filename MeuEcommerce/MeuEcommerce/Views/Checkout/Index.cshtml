@@ -5,33 +5,35 @@
 }
 
 @*@foreach (var item in Model.Produtos)
-{
+    {
 
 
 
-}*@
+    }*@
 
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <td> - </td>
-            <td> - </td>
-            <td> - </td>
-            <td> - </td>
+            <td> Nome </td>
+            <td> Quantidade </td>
+            <td> Preco Unitario </td>
+            <td> Total </td>
         </tr>
     </thead>
     <tbody>
+
         @foreach (var item in Model.Carrinho.Itens)
+
         {
-            <tr>
-                <td> - </td>
-                <td> - </td>
-                <td> - </td>
-                <td> - </td>
-            </tr>
+        <tr>
+        <td> @item.Value.NomeProduto </td>
+        <td> @item.Value.Qtd </td>
+        <td> BTC @item.Value.PrecoTotal.ToString("N2") </td>
+        <td> BTC @item.Value.PrecoUnidade.ToString("N2") </td>
+        </tr>
 
-        })
+    }
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
 

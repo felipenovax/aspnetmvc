@@ -8,5 +8,6 @@ namespace MeuEcommerce.Models
     public class CheckoutIndexViewModel
     {
         public CarrinhoCompras Carrinho { get; set; }
+        
     }
 }
