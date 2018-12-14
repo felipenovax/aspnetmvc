@@ -4,12 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MeuEcommerce.Models;
+using MeuEcommerce.DAL;
 
 
 namespace MeuEcommerce.Controllers
 {
     public class BaseController : Controller
+
     {
+        protected DBContext _dbc = new DBContext();
+
+
+
         protected override void OnActionExecuting(
             ActionExecutingContext filterContext)
 

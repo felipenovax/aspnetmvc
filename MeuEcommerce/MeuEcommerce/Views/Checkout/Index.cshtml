@@ -27,13 +27,15 @@
         {
         <tr>
         <td> @item.Value.NomeProduto </td>
-        <td> @item.Value.Qtd </td>
+        <td><a href="/checkout/IncrementaItem/@item.Key" class="btn btn-primary btn-sm"> + </a> @item.Value.Qtd <a href="/checkout/DecremtaItem/@item.Key" class="btn btn-primary btn-sm"> - </a> <a href="/checkout/RemoveItem/@item.Key" class="btn btn-danger btn-sm"> delete </a></td>
         <td> BTC @item.Value.PrecoTotal.ToString("N2") </td>
         <td> BTC @item.Value.PrecoUnidade.ToString("N2") </td>
         </tr>
 
     }
-
+        
         </tbody>
     </table>
 
+<a href="#" class="btn btn-sm btn-sm"> Checkout</a>              
+<a href="/checkout/Limpar" class="btn btn-danger btn-sm"> Limpar Carrinho</a>

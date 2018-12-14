@@ -26,6 +26,36 @@ namespace MeuEcommerce.Models
                 Itens.Add(produto.Id, CarrinhoItem);
             }
         } 
+
+        public void Decrementa(int IdProduto)
+        {
+            Itens[IdProduto].Qtd--;
+
+            if (Itens[IdProduto].Qtd == 0)
+            {
+                Itens.Remove(IdProduto);
+            }
+        }
+
+        public void Incrementa(int IdProduto)
+        {
+            Itens[IdProduto].Qtd++;
+        }
+
+        public void RemoveItem(int idProduto)
+        {
+
+            Itens.Remove(idProduto);
+        }
+
+
+        public void LimparCarrinho()
+        {
+            
+            Itens.Clear();
+        }
+
+
         public int QuantidadeDeItens => Itens.Values.Sum(item => item.Qtd);
     }
 
