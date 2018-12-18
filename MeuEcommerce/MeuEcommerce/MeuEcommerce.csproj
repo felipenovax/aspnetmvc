@@ -47,6 +47,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -153,14 +159,28 @@
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\DBContext.cs" />
+    <Compile Include="DAL\Database.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812182156266_InitialCreate.cs" />
+    <Compile Include="Migrations\201812182156266_InitialCreate.Designer.cs">
+      <DependentUpon>201812182156266_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812182346176_AdcionarListaProdutos.cs" />
+    <Compile Include="Migrations\201812182346176_AdcionarListaProdutos.Designer.cs">
+      <DependentUpon>201812182346176_AdcionarListaProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812182351175_HTML.cs" />
+    <Compile Include="Migrations\201812182351175_HTML.Designer.cs">
+      <DependentUpon>201812182351175_HTML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CarrinhoCompras.cs" />
     <Compile Include="Models\CarrinhoItem.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\CheckoutIndexViewModel.cs" />
+    <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\HomeIndexViewModel.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -270,6 +290,17 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812182156266_InitialCreate.resx">
+      <DependentUpon>201812182156266_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812182346176_AdcionarListaProdutos.resx">
+      <DependentUpon>201812182346176_AdcionarListaProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812182351175_HTML.resx">
+      <DependentUpon>201812182351175_HTML.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -19,8 +19,8 @@ namespace MeuEcommerce.Controllers
 
             model.CategoriaSelecionada = categoria;
 
-            model.Produtos = _dbc.GetProdutos();
-            model.Categorias = _dbc.GetCategorias();
+            model.Produtos = _dbc.Produtos.ToArray();
+            model.Categorias = _dbc.Categorias.ToArray();
 
 
             if (categoria != null)

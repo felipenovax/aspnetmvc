@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MeuEcommerce.Models
 {
+    [Table("Produtos")]
     public class Produto
     {
+
         static Random _random = new Random();
         public string Nome { get; set; }
         public decimal Preco { get; set; }
@@ -15,8 +18,16 @@ namespace MeuEcommerce.Models
         public int Id { get; set; }
         public int IdCategoria { get; set; }
 
+
+        public Produto()
+        {
+
+        }
+
         public Produto(string nome, int id, string img, int idCategoria)
         {
+
+
             Id = id;
             Nome = nome;
             Preco = _random.Next(10, 100) + (decimal)_random.NextDouble();

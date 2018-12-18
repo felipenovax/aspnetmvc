@@ -1,21 +1,21 @@
 ﻿@model MeuEcommerce.Models.HomeIndexViewModel
 
+
 @{
     ViewBag.Title = "Home Page";
 }
 
 
 
-</style>
+@*</style>*@
 
-   </head>
+   @*</head>*@
 <body>
 
-    <p>
+    
 
         <form action="" method="get" id="frmCategoria" class="option">
             <span>CATEGORIAS</span>
-    </p>
     
     <select style="padding-left: 0px; width: 100px;" id="categoria" name="categoria" class="form-control" onchange="$('#frmCategoria').submit()">
         <option value="">Tudo</option>
@@ -38,7 +38,7 @@
        
 
     @*<button type="button" class="btn btn-info">Ir</button>*@
-    </p>
+    
     <div>
         <div class="container">
 
@@ -47,10 +47,10 @@
                 @foreach (var item in Model.Produtos)
                 {
                     <div class="card produto-item shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-                        <img style="padding-top: 6px;" class="card-img-top" src="@item.Imagem" alt="Imagem de capa do card">
+                        <img style="padding-top: 6px;" class="card-img-top" src="/img/@item.Imagem" alt="@item.Descrição">
                         <div class="card-body">
                             <h5 class="card-title">@item.Nome</h5>
-                            <p class="card-text">Smart TV Samsung 4k Ultra HD</p>
+                            <p class="card-text">@item.Descrição</p>
                             <a href="/home/additem/@item.Id" class="btn btn-primary btn-sm"> Adicionar</a>
                             @*<button type="button" class="btn btn-primary btn-sm" href="/home/additem/@item.Id" >Adicionar</button>*@
                             <span style="font: bold;padding-left: 10%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: 110%">R$ @item.Preco.ToString("N2")</span>
@@ -66,3 +66,4 @@
         </div>
     </div>
 
+    </body>

@@ -5,12 +5,10 @@ using System.Web;
 
 namespace MeuEcommerce.Models
 {
-    
-    public class Categoria
+    public class Fornecedor
     {
-        public string Nome { get; set; }
         public int Id { get; set; }
-
-        public List<Produto> Produto { get; set; }
+        public string Nome { get; set; }
+        public List<Produto> Produtos { get; set; }
     }
 }
