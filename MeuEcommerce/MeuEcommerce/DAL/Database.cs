@@ -16,6 +16,10 @@ namespace MeuEcommerce.DAL
         public IDbSet<Produto> Produtos { get; set; }
         public IDbSet<Categoria> Categorias { get; set; }
         public IDbSet<Fornecedor> Fornecedores { get; set; }
+        public IDbSet<Compra> Compras {get; set;}
+        public IDbSet<CompraItem> CompraItens { get; set; }
+        public IDbSet<Cliente> Clientes { get; set; }
+        
 
        
 

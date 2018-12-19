@@ -19,8 +19,8 @@ namespace MeuEcommerce.Controllers
 
             model.CategoriaSelecionada = categoria;
 
-            model.Produtos = _dbc.Produtos.ToArray();
-            model.Categorias = _dbc.Categorias.ToArray();
+            model.Produtos = _dal.Produtos.ToArray();
+            model.Categorias = _dal.Categorias.ToArray();
 
 
             if (categoria != null)
@@ -41,7 +41,7 @@ namespace MeuEcommerce.Controllers
 
         public ActionResult AddItem(int id, int? categoria)
         {
-            var produto = _dbc.GetProdutoPorId(id);
+            var produto = _dal.GetProdutoPorId(id);
             var carrinho = GetCarrinhoDaSessao();
             carrinho.Add(produto);
 

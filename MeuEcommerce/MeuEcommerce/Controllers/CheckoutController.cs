@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using MeuEcommerce.DAL;
 using MeuEcommerce.Models;
+using System.Data.Entity;
+
 
 namespace MeuEcommerce.Controllers
 {
@@ -18,6 +20,34 @@ namespace MeuEcommerce.Controllers
             model.Carrinho = GetCarrinhoDaSessao();
             
             return View(model);
+        }
+
+        public ActionResult CompraRealizada()
+        {
+            var carrinho = GetCarrinhoDaSessao();
+
+            var compraItens = new List<CompraItem>();
+
+            foreach (var item in carrinho.Itens)
+            {
+                compraItens.Add(new CompraItem(
+                    item.Value.Qtd,
+                    item.Value.PrecoUnidade,
+                    item.Value.IdProduto));
+            }
+
+            var compra = new Compra(compraItens);
+
+            _dal.Compras.Add(compra);
+            _dal.SaveChanges();
+            compra = _dal.Compras
+                .Include(c => c.CompraItens)
+                .Include(c => c.CompraItens.Select(i => i.Produto))
+                .FirstOrDefault(item => item.Id == compra.Id);
+                
+
+
+            return View(compra);
         }
 
 

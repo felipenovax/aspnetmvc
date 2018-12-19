@@ -175,11 +175,26 @@
     <Compile Include="Migrations\201812182351175_HTML.Designer.cs">
       <DependentUpon>201812182351175_HTML.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812192147088_Cliente-Compras-Itens.cs" />
+    <Compile Include="Migrations\201812192147088_Cliente-Compras-Itens.Designer.cs">
+      <DependentUpon>201812192147088_Cliente-Compras-Itens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812192157128_Corrigido entidade CmpraItem.cs" />
+    <Compile Include="Migrations\201812192157128_Corrigido entidade CmpraItem.Designer.cs">
+      <DependentUpon>201812192157128_Corrigido entidade CmpraItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812192202436_CompraStatus.cs" />
+    <Compile Include="Migrations\201812192202436_CompraStatus.Designer.cs">
+      <DependentUpon>201812192202436_CompraStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CarrinhoCompras.cs" />
     <Compile Include="Models\CarrinhoItem.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\CheckoutIndexViewModel.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Compra.cs" />
+    <Compile Include="Models\CompraItem.cs" />
     <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\HomeIndexViewModel.cs" />
     <Compile Include="Models\Produto.cs" />
@@ -275,6 +290,7 @@
     <Content Include="Views\Checkout\Index.cshtml" />
     <Content Include="Views\Errors\InternalServerError.cshtml" />
     <Content Include="Views\Errors\NotFound.cshtml" />
+    <Content Include="Views\Checkout\CompraRealizada.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -300,6 +316,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812182351175_HTML.resx">
       <DependentUpon>201812182351175_HTML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812192147088_Cliente-Compras-Itens.resx">
+      <DependentUpon>201812192147088_Cliente-Compras-Itens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812192157128_Corrigido entidade CmpraItem.resx">
+      <DependentUpon>201812192157128_Corrigido entidade CmpraItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812192202436_CompraStatus.resx">
+      <DependentUpon>201812192202436_CompraStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

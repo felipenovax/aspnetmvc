@@ -12,7 +12,7 @@ namespace MeuEcommerce.Controllers
     public class BaseController : Controller
 
     {
-        protected Database _dbc = new Database();
+        protected Database _dal = new Database();
 
 
 
